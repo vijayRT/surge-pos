@@ -15,3 +15,5 @@ As per given requirements, the widgets are fully decoupled from each other and c
 The credit limit value is also stored across sessions using Persistence middleware provided by Zustand, which stores the value in the browser's LocalStorage API.
 
 In the Sales Order Entry widget, new items can be added and the table will update whenever correspondingly. The total is also calculated, and the credit check widget monitors the total value through the prop passed from `App.tsx`.
+
+The red blinking effect is a modified version of the CSS found here: https://www.florin-pop.com/blog/2019/03/css-pulse-effect/
