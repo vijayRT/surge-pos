@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
+import { Container } from 'react-bootstrap';
+import SalesOrderEntry from './widgets/SalesOrderEntry';
+import CreditCheck from './widgets/CreditCheck';
+import { useSalesOrderStore } from './widgets/SalesOrderEntry/store';
 function App() {
+  const total = useSalesOrderStore(state => state.total)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className="justify-content-center">
+      <h1 className="my-3 text-center">Surge POS</h1>
+      <CreditCheck compareValue={total} />
+      <SalesOrderEntry />
+    </Container>
   );
 }
 
